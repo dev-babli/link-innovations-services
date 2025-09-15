@@ -5,17 +5,19 @@ import { Code, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 const menuItems = [
-  { name: "Services", href: "#services" },
-  { name: "Solutions", href: "#solutions" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "About Us", href: "#about" },
+  { name: "Services", href: "/services" },
+  { name: "Solutions", href: "/solutions" },
+  { name: "Portfolio", href: "/portfolio" },
+  { name: "About Us", href: "/about" },
 ];
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const router = useRouter();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -92,34 +94,28 @@ export const HeroHeader = () => {
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button
-                  asChild
                   variant="outline"
                   size="sm"
+                  onClick={() => router.push("/contact")}
                   className={cn(isScrolled && "lg:hidden")}
                 >
-                  <Link href="#">
-                    <span>Contact</span>
-                  </Link>
+                  <span>Contact</span>
                 </Button>
                 <Button
-                  asChild
                   size="sm"
+                  onClick={() => router.push("/quote")}
                   className={cn(isScrolled && "lg:hidden")}
                 >
-                  <Link href="#">
-                    <span>Quote</span>
-                  </Link>
+                  <span>Quote</span>
                 </Button>
                 <Button
-                  asChild
                   size="sm"
+                  onClick={() => router.push("/get-started")}
                   className={cn(
                     isScrolled ? "lg:inline-flex rounded-3xl px-5" : "hidden"
                   )}
                 >
-                  <Link href="#">
-                    <span>Get Started</span>
-                  </Link>
+                  <span>Get Started</span>
                 </Button>
               </div>
             </div>

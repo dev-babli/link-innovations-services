@@ -27,32 +27,32 @@ const pageVariants = {
 };
 
 const pageTransition = {
-    type: 'tween',
-    ease: 'anticipate',
-    duration: 0.4
+  type: 'tween' as const,
+  ease: 'anticipate' as const,
+  duration: 0.4
 };
 
 const loadingVariants = {
-    initial: {
-        scaleX: 0,
-        originX: 0
-    },
-    animate: {
-        scaleX: 1,
-        originX: 0,
-        transition: {
-            duration: 0.3,
-            ease: 'easeInOut'
-        }
-    },
-    exit: {
-        scaleX: 0,
-        originX: 1,
-        transition: {
-            duration: 0.3,
-            ease: 'easeInOut'
-        }
+  initial: {
+    scaleX: 0,
+    originX: 0
+  },
+  animate: {
+    scaleX: 1,
+    originX: 0,
+    transition: {
+      duration: 0.3,
+      ease: 'easeInOut' as const
     }
+  },
+  exit: {
+    scaleX: 0,
+    originX: 1,
+    transition: {
+      duration: 0.3,
+      ease: 'easeInOut' as const
+    }
+  }
 };
 
 export default function PageTransition({ children }: PageTransitionProps) {

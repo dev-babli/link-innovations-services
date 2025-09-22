@@ -44,9 +44,7 @@ export default function RootLayout({
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
         <HeroHeader />
-        <PageTransition>
-          {children}
-        </PageTransition>
+        {children}
         <VisualEditsMessenger />
       </body>
     </html>

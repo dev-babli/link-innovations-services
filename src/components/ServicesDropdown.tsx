@@ -53,31 +53,31 @@ export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isMobile = f
 
     const toggleDropdown = () => setIsOpen(!isOpen);
 
-    const dropdownVariants = {
-        hidden: {
-            opacity: 0,
-            y: -10,
-            scale: 0.95
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            transition: {
-                duration: 0.2,
-                ease: 'easeOut'
-            }
-        },
-        exit: {
-            opacity: 0,
-            y: -10,
-            scale: 0.95,
-            transition: {
-                duration: 0.15,
-                ease: 'easeIn'
-            }
-        }
-    };
+  const dropdownVariants = {
+    hidden: {
+      opacity: 0,
+      y: -10,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.2,
+        ease: 'easeOut' as const
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: -10,
+      scale: 0.95,
+      transition: {
+        duration: 0.15,
+        ease: 'easeIn' as const
+      }
+    }
+  };
 
     if (isMobile) {
         return (

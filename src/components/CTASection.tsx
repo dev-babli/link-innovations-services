@@ -7,7 +7,7 @@ const CTASection = () => {
   const services = [
     {
       icon: <Code className="w-6 h-6" />,
-      title: "Custom Software Development", 
+      title: "Custom Software Development",
       description: "Tailored solutions built with cutting-edge technologies"
     },
     {
@@ -46,11 +46,11 @@ const CTASection = () => {
               Innovate Your Business with Link Innovations
             </h2>
             <p className="mt-4 text-muted-foreground md:text-base">
-              Transform your digital presence with our comprehensive IT solutions. 
-              From custom software to cloud migration, we deliver innovation 
+              Transform your digital presence with our comprehensive IT solutions.
+              From custom software to cloud migration, we deliver innovation
               that drives your business forward.
             </p>
-            
+
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {services.map((service, index) => (
                 <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-background/50 backdrop-blur-sm">
@@ -64,7 +64,7 @@ const CTASection = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button>Start Your Project</Button>
               <Button variant="outline">
@@ -74,11 +74,6 @@ const CTASection = () => {
             </div>
           </div>
           <div className="relative ml-6 max-h-96 md:mt-8 md:ml-0">
-            <img
-              src="/mask.png"
-              alt="placeholder"
-              className="absolute -bottom-12 left-4 h-48 -translate-x-1/2 -rotate-[120deg]"
-            />
             <video
               src="https://assets.jitter.video/product-import-hero-hd-20.mp4"
               autoPlay

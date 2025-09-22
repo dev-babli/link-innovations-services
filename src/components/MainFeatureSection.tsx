@@ -9,7 +9,7 @@ import { HeroHeader } from "./header";
 
 import type { Variants } from "framer-motion";
 
-const transitionVariants: { item: Variants } = {
+const transitionVariants = {
   item: {
     hidden: {
       opacity: 0,
@@ -27,7 +27,7 @@ const transitionVariants: { item: Variants } = {
       },
     },
   },
-};
+} as const;
 
 export default function MainFeatureSection() {
   const services = [
@@ -97,7 +97,7 @@ export default function MainFeatureSection() {
                         },
                       },
                     },
-                    ...transitionVariants,
+                    item: transitionVariants.item,
                   }}
                   className="mt-12 flex items-center gap-2"
                 >

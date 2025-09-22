@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { ServicesDropdown } from "@/components/ServicesDropdown";
 
 const menuItems = [
-  { name: "Services", href: "/services" },
   { name: "Solutions", href: "/solutions" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "About Us", href: "/about" },
@@ -36,7 +36,7 @@ export const HeroHeader = () => {
           className={cn(
             "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
             isScrolled &&
-              "bg-background/50 max-w-4xl rounded-full border backdrop-blur-lg lg:px-5"
+            "bg-background/50 max-w-4xl rounded-full border backdrop-blur-lg lg:px-5"
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
@@ -61,7 +61,10 @@ export const HeroHeader = () => {
             </div>
 
             <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-              <ul className="flex gap-8 text-sm">
+              <ul className="flex gap-8 text-sm items-center">
+                <li>
+                  <ServicesDropdown />
+                </li>
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     <Link
@@ -80,6 +83,9 @@ export const HeroHeader = () => {
             <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
               <div className="lg:hidden">
                 <ul className="space-y-6 text-base">
+                  <li>
+                    <ServicesDropdown isMobile={true} />
+                  </li>
                   {menuItems.map((item, index) => (
                     <li key={index}>
                       <Link

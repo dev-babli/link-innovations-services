@@ -1,0 +1,151 @@
+/* Custom sexy typography styles for HyperspeedSection */
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+.hyperspeed-section {
+  font-family: "Inter", sans-serif;
+}
+
+.hyperspeed-title {
+  font-family: "Orbitron", monospace;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.5),
+    0 0 20px rgba(16, 185, 129, 0.3), 0 0 30px rgba(16, 185, 129, 0.2);
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+.hyperspeed-subtitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hyperspeed-badge {
+  font-family: "Orbitron", monospace;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.hyperspeed-description {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.hyperspeed-button {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.hyperspeed-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.hyperspeed-button:hover::before {
+  left: 100%;
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.5),
+      0 0 20px rgba(16, 185, 129, 0.3), 0 0 30px rgba(16, 185, 129, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.8),
+      0 0 30px rgba(16, 185, 129, 0.5), 0 0 40px rgba(16, 185, 129, 0.3);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.floating-element:nth-child(3) {
+  animation-delay: -4s;
+}
+
+/* Gradient text animation */
+.gradient-text {
+  color: white !important;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Premium button effects */
+.premium-button {
+  position: relative;
+  background: linear-gradient(45deg, #10b981, #06b6d4, #8b5cf6);
+  background-size: 300% 300%;
+  animation: gradientMove 3s ease infinite;
+  border: none;
+  overflow: hidden;
+}
+
+.premium-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #059669, #0891b2, #7c3aed);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.premium-button:hover::after {
+  opacity: 1;
+}
+
+@keyframes gradientMove {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

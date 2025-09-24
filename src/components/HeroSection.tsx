@@ -20,36 +20,38 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import LottieAnimation from "./LottieAnimation";
 
 const TAB_LIST = [
   {
     icon: Code,
     title: "Web Development",
-    image: "https://assets.jitter.video/product-import-hero-hd-20.mp4",
+    animation: "/16_9.json",
+    type: "lottie" as const,
   },
   {
     icon: Smartphone,
     title: "Mobile Apps",
-    image:
-      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
+    animation: "/16_9.json",
+    type: "lottie" as const,
   },
   {
     icon: Cloud,
     title: "Cloud Solutions",
-    image:
-      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg",
+    animation: "/16_9.json",
+    type: "lottie" as const,
   },
   {
     icon: Shield,
     title: "Cybersecurity",
-    image:
-      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-4.svg",
+    animation: "/16_9.json",
+    type: "lottie" as const,
   },
   {
     icon: Database,
     title: "Data Analytics",
-    image:
-      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-5.svg",
+    animation: "/16_9.json",
+    type: "lottie" as const,
   },
 ];
 
@@ -154,15 +156,16 @@ const HeroSection = () => {
               </TabsList>
               {TAB_LIST.map((content, i) => (
                 <TabsContent key={`tab-content-${i}`} value={content.title}>
-                  <div className="aspect-[1.696202532] w-full overflow-hidden rounded-3xl">
-                    <video
-                      src={content.image}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                      className="block size-full object-cover object-center"
+                  <div className="aspect-[1.696202532] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100">
+                    <LottieAnimation
+                      src={content.animation}
+                      width="100%"
+                      height="100%"
+                      loop={true}
+                      autoplay={true}
+                      quality="high"
+                      renderer="svg"
+                      className="w-full h-full"
                     />
                   </div>
                 </TabsContent>

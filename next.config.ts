@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
         hostname: 'assets.jitter.video',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

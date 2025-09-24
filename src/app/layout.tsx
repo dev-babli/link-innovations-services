@@ -6,6 +6,7 @@ import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import { HeroHeader } from "@/components/header";
 import PageTransition from "@/components/PageTransition";
+import LenisProvider from "@/components/LenisProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,9 +44,11 @@ export default function RootLayout({
           data-debug="true"
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
-        <HeroHeader />
-        {children}
-        <VisualEditsMessenger />
+        <LenisProvider>
+          <HeroHeader />
+          {children}
+          <VisualEditsMessenger />
+        </LenisProvider>
       </body>
     </html>
   );

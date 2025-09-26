@@ -72,11 +72,11 @@ export default function ServicesPageClient() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
+        <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
           Build and ship software on a single, collaborative platform
         </motion.h1>
 
-        <p className="mt-4 text-base sm:text-lg text-gray-600">
+        <p className="mt-4 text-base sm:text-lg text-gray-300">
           Join the world’s most widely adopted AI-powered developer platform.
         </p>
       </motion.section>
@@ -92,17 +92,16 @@ export default function ServicesPageClient() {
                 key={service.title}
                 onClick={() => setSelectedService(service)}
                 className={`cursor-pointer rounded-xl p-4 flex flex-col items-start gap-3 transition transform duration-300
-            ${
-              selectedService.title === service.title
-                ? "bg-indigo-100 shadow-lg scale-105"
-                : "bg-gradient-to-r from-blue-200 via-gray-300 to-gray-200 shadow-md hover:shadow-xl hover:scale-105"
-            }`}
+            ${selectedService.title === service.title
+                    ? "bg-indigo-100 shadow-lg scale-105"
+                    : "bg-gradient-to-r from-blue-200 via-gray-300 to-gray-200 shadow-md hover:shadow-xl hover:scale-105"
+                  }`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
                 <service.icon className="h-8 w-8 text-indigo-600" />
-                <h3 className="text-base font-semibold text-gray-900">
+                <h3 className="text-base font-semibold text-white">
                   {service.title}
                 </h3>
               </motion.div>
@@ -117,15 +116,15 @@ export default function ServicesPageClient() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5 }}
-                className="w-full max-w-lg bg-gradient-to-br from-indigo-50 via-white to-pink-50 rounded-xl p-8 border border-gray-200 shadow-md flex flex-col justify-start min-h-[320px]"
+                className="w-full max-w-lg bg-gray-800 rounded-xl p-8 border border-gray-700 shadow-md flex flex-col justify-start min-h-[320px]"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <selectedService.icon className="h-10 w-10 text-indigo-600" />
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <h2 className="text-2xl font-bold text-white">
                     {selectedService.title}
                   </h2>
                 </div>
-                <p className="text-gray-700 text-base leading-relaxed mb-6">
+                <p className="text-gray-300 text-base leading-relaxed mb-6">
                   {selectedService.desc}
                 </p>
 

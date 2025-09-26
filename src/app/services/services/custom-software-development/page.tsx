@@ -14,10 +14,10 @@ export default function CustomSoftwareDevelopmentPage() {
       <section className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
         <Code2 className="h-16 w-16 text-indigo-600 flex-shrink-0" />
         <div className="flex-1">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Custom Software Development
           </h1>
-          <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed mb-6">
+          <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed mb-6">
             We design and develop web applications, desktop software, and
             enterprise solutions tailored to your unique business requirements.
             From internal tools to full-scale platforms, our solutions are
@@ -34,7 +34,7 @@ export default function CustomSoftwareDevelopmentPage() {
       {/* Features Section */}
       <section className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-indigo-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">
+          <h2 className="text-xl font-semibold text-white mb-2">
             Web Applications
           </h2>
           <p className="text-gray-700">
@@ -43,7 +43,7 @@ export default function CustomSoftwareDevelopmentPage() {
           </p>
         </div>
         <div className="bg-indigo-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">
+          <h2 className="text-xl font-semibold text-white mb-2">
             Desktop Applications
           </h2>
           <p className="text-gray-700">
@@ -52,7 +52,7 @@ export default function CustomSoftwareDevelopmentPage() {
           </p>
         </div>
         <div className="bg-indigo-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">
+          <h2 className="text-xl font-semibold text-white mb-2">
             Enterprise Solutions
           </h2>
           <p className="text-gray-700">
@@ -61,7 +61,7 @@ export default function CustomSoftwareDevelopmentPage() {
           </p>
         </div>
         <div className="bg-indigo-50 p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">
+          <h2 className="text-xl font-semibold text-white mb-2">
             Cloud & Security
           </h2>
           <p className="text-gray-700">

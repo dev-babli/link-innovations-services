@@ -4,12 +4,12 @@ import Image from "next/image";
 
 export default function Features() {
   return (
-    <section className="w-full  py-16 md:py-32">
+    <section className="w-full py-16 md:py-32 bg-black-100">
       <div className="mx-auto max-w-7xl px-6">
-        <h2 className="mt-8 max-w-3xl text-balance text-5xl font-medium md:text-6xl lg:mt-16">
+        <h2 className="mt-8 max-w-3xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 text-white">
           Complete IT solutions for your business needs
         </h2>
-        <h2 className="mt-8 max-w-2xl text-muted-foreground tracking-wide text-pretty text-lg">
+        <h2 className="mt-8 max-w-2xl text-gray-300 tracking-wide text-pretty text-lg">
           Link Innovations offers comprehensive development services to help you
           build and scale your technology infrastructure
         </h2>

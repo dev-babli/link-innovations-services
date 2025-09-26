@@ -9,7 +9,7 @@ const SERVICES = [
     href: "#web-development",
   },
   {
-    name: "Mobile Apps", 
+    name: "Mobile Apps",
     description: "iOS & Android solutions",
     width: 154,
     height: 31,
@@ -68,12 +68,12 @@ const SERVICES = [
 
 const LogoSection = () => {
   return (
-    <section className="overflow-hidden w-full px-0  bg-muted/80 backdrop-blur-3xl py-32 dark:bg-muted">
+    <section className="overflow-hidden w-full px-0 bg-black-100 py-32">
       <div className="container mx-auto text-center">
-        <h2 className="text-xl font-semibold tracking-tight text-balance lg:text-3xl">
+        <h2 className="text-xl font-semibold tracking-tight text-balance lg:text-3xl text-white">
           Link Innovations - Your IT Development Partner.
           <br />
-          <span className="text-muted-foreground">
+          <span className="text-gray-300">
             From startup ideas to enterprise solutions.
           </span>
         </h2>
@@ -85,11 +85,11 @@ const LogoSection = () => {
           <div className="flex shrink-0 animate-marquee items-center gap-12">
             {SERVICES.map((service, index) => (
               <a href={service.href} key={index} className="p-6 flex flex-col items-center min-w-[200px]">
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm border">
-                  <h3 className="font-semibold text-sm text-gray-900 dark:text-gray-100 mb-1">
+                <div className="bg-gray-800 rounded-lg p-4 shadow-sm border border-gray-700">
+                  <h3 className="font-semibold text-sm text-white mb-1">
                     {service.name}
                   </h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                  <p className="text-xs text-gray-300">
                     {service.description}
                   </p>
                 </div>
@@ -100,11 +100,11 @@ const LogoSection = () => {
           <div className="flex shrink-0 animate-marquee items-center gap-12">
             {SERVICES.map((service, index) => (
               <a href={service.href} key={index} className="p-6 flex flex-col items-center min-w-[200px]">
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm border">
-                  <h3 className="font-semibold text-sm text-gray-900 dark:text-gray-100 mb-1">
+                <div className="bg-gray-800 rounded-lg p-4 shadow-sm border border-gray-700">
+                  <h3 className="font-semibold text-sm text-white mb-1">
                     {service.name}
                   </h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                  <p className="text-xs text-gray-300">
                     {service.description}
                   </p>
                 </div>

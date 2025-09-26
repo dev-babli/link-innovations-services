@@ -39,7 +39,7 @@ const engagementModels = [
 export default function EngagementModelsSection() {
   return (
     <motion.section
-      className="relative overflow-hidden bg-gradient-to-b from-indigo-50 via-white to-pink-50 py-20 md:py-28 text-gray-900"
+      className="relative overflow-hidden bg-black-100 py-20 md:py-28 text-white"
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}

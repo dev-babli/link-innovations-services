@@ -1,121 +1,166 @@
-import { Code } from "lucide-react";
+import { Code, Linkedin, Twitter, Send } from "lucide-react";
 import React from "react";
+import Link from "next/link";
 
-interface Footer7Props {
-  logo?: {
-    url: string;
-    src: string;
-    alt: string;
-    title: string;
-  };
-  sections?: Array<{
-    title: string;
-    links: Array<{ name: string; href: string }>;
-  }>;
-  description?: string;
-  socialLinks?: Array<{
-    icon: React.ReactElement;
-    href: string;
-    label: string;
-  }>;
-  copyright?: string;
-  legalLinks?: Array<{
-    name: string;
-    href: string;
-  }>;
-}
-
-const defaultSections = [
-  {
-    title: "Services",
-    links: [
-      { name: "Web Development", href: "#" },
-      { name: "Mobile Apps", href: "#" },
-      { name: "Cloud Solutions", href: "#" },
-      { name: "DevOps", href: "#" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { name: "About", href: "#" },
-      { name: "Team", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Careers", href: "#" },
-    ],
-  },
-  {
-    title: "Support",
-    links: [
-      { name: "Documentation", href: "#" },
-      { name: "Contact", href: "#" },
-      { name: "Case Studies", href: "#" },
-      { name: "Privacy", href: "#" },
-    ],
-  },
-];
-
-const defaultLegalLinks = [
-  { name: "Terms and Conditions", href: "#" },
-  { name: "Privacy Policy", href: "#" },
-];
-
-const FooterSection = ({
-  logo = {
-    url: "https://www.linkinnovations.com",
-    src: "https://example.com/path/to/link-innovations-logo.svg",
-    alt: "Link Innovations logo",
-    title: "Link Innovations",
-  },
-  sections = defaultSections,
-  description = "Link Innovations delivers cutting-edge IT solutions, from web development to cloud services.",
-  copyright = "© 2025 Link Innovations. All rights reserved.",
-  legalLinks = defaultLegalLinks,
-}: Footer7Props) => {
+const FooterSection = () => {
   return (
-    <section className="py-32 w-full bg-white/50 backdrop-blur-3xl rounded-t-3xl border border-black/10 shadow-2xl">
-      <div className="container  max-w-7xl mx-auto">
-        <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
-          <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
-            {/* Logo */}
-            <div className="flex items-center gap-2 lg:justify-start">
-              <Code />
-              <h2 className="text-xl font-semibold">{logo.title}</h2>
+    <footer className="w-full bg-black text-white">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        {/* Top Section - Navigation Links */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+          {/* WEB DEVELOPMENT */}
+          <div>
+            <h3 className="text-white font-bold text-sm uppercase mb-4 tracking-wider">
+              WEB DEVELOPMENT
+            </h3>
+            <div className="h-px bg-gray-600 w-16 mb-6"></div>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/web-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Custom Web Applications
+                </Link>
+              </li>
+              <li>
+                <Link href="/web-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  E-commerce Solutions
+                </Link>
+              </li>
+              <li>
+                <Link href="/web-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Progressive Web Apps
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* CLOUD SOLUTIONS */}
+          <div>
+            <h3 className="text-white font-bold text-sm uppercase mb-4 tracking-wider">
+              CLOUD SOLUTIONS
+            </h3>
+            <div className="h-px bg-gray-600 w-16 mb-6"></div>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/cloud-solutions" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Cloud Migration
+                </Link>
+              </li>
+              <li>
+                <Link href="/cloud-solutions" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  DevOps & Automation
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* MOBILE APPS */}
+          <div>
+            <h3 className="text-white font-bold text-sm uppercase mb-4 tracking-wider">
+              MOBILE APPS
+            </h3>
+            <div className="h-px bg-gray-600 w-16 mb-6"></div>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/mobile-app-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  iOS Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/mobile-app-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Android Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/mobile-app-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Cross-Platform Apps
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* COMPANY */}
+          <div>
+            <h3 className="text-white font-bold text-sm uppercase mb-4 tracking-wider">
+              COMPANY
+            </h3>
+            <div className="h-px bg-gray-600 w-16 mb-6"></div>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/portfolio" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/quote" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Get Quote
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Section - Logo and Social */}
+        <div className="flex flex-col lg:flex-row items-center justify-between pt-8 border-t border-gray-800">
+          {/* Large Logo */}
+          <div className="mb-8 lg:mb-0">
+            <div className="flex items-center space-x-3">
+              <Code className="w-8 h-8 text-white" />
+              <span className="text-6xl font-bold text-gray-300 tracking-wider">
+                LINK
+              </span>
             </div>
-            <p className="text-muted-foreground max-w-[70%] text-sm">
-              {description}
+          </div>
+
+          {/* Social Media and Copyright */}
+          <div className="flex flex-col items-center lg:items-end space-y-4">
+            {/* Social Media Icons */}
+            <div className="flex space-x-6">
+              <Link
+                href="https://linkedin.com/company/link-innovations"
+                className="text-white hover:text-gray-300 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-6 h-6" />
+              </Link>
+              <Link
+                href="https://twitter.com/linkinnovations"
+                className="text-white hover:text-gray-300 transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-6 h-6" />
+              </Link>
+              <Link
+                href="/contact"
+                className="text-white hover:text-gray-300 transition-colors"
+                aria-label="Contact"
+              >
+                <Send className="w-6 h-6" />
+              </Link>
+            </div>
+
+            {/* Copyright */}
+            <p className="text-gray-400 text-sm">
+              © 2025 Link Innovations. All rights reserved.
+            </p>
+
+            {/* Site Credit */}
+            <p className="text-gray-500 text-xs">
+              Site by Link Innovations
             </p>
           </div>
-          <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
-            {sections.map((section, sectionIdx) => (
-              <div key={sectionIdx}>
-                <h3 className="mb-4 font-bold">{section.title}</h3>
-                <ul className="text-muted-foreground space-y-3 text-sm">
-                  {section.links.map((link, linkIdx) => (
-                    <li
-                      key={linkIdx}
-                      className="hover:text-primary font-medium"
-                    >
-                      <a href={link.href}>{link.name}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="text-muted-foreground mt-8 flex flex-col justify-between gap-4 border-t py-8 text-xs font-medium md:flex-row md:items-center md:text-left">
-          <p className="order-2 lg:order-1">{copyright}</p>
-          <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
-            {legalLinks.map((link, idx) => (
-              <li key={idx} className="hover:text-primary">
-                <a href={link.href}> {link.name}</a>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 

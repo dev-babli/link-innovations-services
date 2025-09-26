@@ -64,7 +64,7 @@ export default function MainFeatureSection() {
   ];
 
   return (
-    <div className="">
+    <div className="bg-black-100">
       <main className="overflow-hidden">
         <div
           aria-hidden

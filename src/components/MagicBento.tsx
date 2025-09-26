@@ -38,7 +38,7 @@ const MOBILE_BREAKPOINT = 768;
 // Custom data for Link Innovations services
 const cardData: BentoCardProps[] = [
     {
-        color: '#ffffff',
+        color: '#1a1a1a',
         title: 'Web Development',
         description: 'Custom web applications with modern frameworks',
         label: 'Development',
@@ -46,7 +46,7 @@ const cardData: BentoCardProps[] = [
         imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&crop=center'
     },
     {
-        color: '#ffffff',
+        color: '#1a1a1a',
         title: 'Mobile Apps',
         description: 'Native and cross-platform mobile solutions',
         label: 'Mobile',
@@ -54,7 +54,7 @@ const cardData: BentoCardProps[] = [
         imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop&crop=center'
     },
     {
-        color: '#ffffff',
+        color: '#1a1a1a',
         title: 'Cloud Solutions',
         description: 'Scalable cloud infrastructure and migration services',
         label: 'Cloud',
@@ -62,7 +62,7 @@ const cardData: BentoCardProps[] = [
         imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop&crop=center'
     },
     {
-        color: '#ffffff',
+        color: '#1a1a1a',
         title: 'Data Analytics',
         description: 'Business intelligence and data-driven insights',
         label: 'Analytics',
@@ -70,7 +70,7 @@ const cardData: BentoCardProps[] = [
         imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center'
     },
     {
-        color: '#ffffff',
+        color: '#1a1a1a',
         title: 'Cybersecurity',
         description: 'Enterprise-grade security solutions and audits',
         label: 'Security',
@@ -78,7 +78,7 @@ const cardData: BentoCardProps[] = [
         imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop&crop=center'
     },
     {
-        color: '#ffffff',
+        color: '#1a1a1a',
         title: 'AI & Automation',
         description: 'Intelligent automation and AI-powered solutions',
         label: 'Innovation',

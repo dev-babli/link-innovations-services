@@ -20,13 +20,13 @@ const techLogos = [
 
 export default function TechnologyLogos() {
     return (
-        <div className="w-full py-16 bg-white dark:bg-gray-900">
+        <div className="w-full py-16 bg-black-100">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h2 className="text-3xl font-bold text-white mb-4">
                         Built with Modern Technologies
                     </h2>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                         Our solutions are powered by the latest and most reliable technologies in the industry
                     </p>
                 </div>

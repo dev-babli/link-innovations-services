@@ -35,10 +35,10 @@ export default function VideoDemoSection() {
       </div>
 
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
           Accelerate performance
         </h2>
-        <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
           With our AI-powered tools embedded throughout your workflow, you can
           simplify your toolchain, automate tasks, and enhance your developer
           experience.
@@ -64,10 +64,10 @@ export default function VideoDemoSection() {
           {/* Play/Pause Button */}
           <button
             onClick={handleTogglePlay}
-            className="absolute bottom-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white/90 shadow-lg transition"
+            className="absolute bottom-4 right-4 p-2 rounded-full bg-gray-800/80 hover:bg-gray-800/90 shadow-lg transition"
           >
             <svg
-              className="h-12 w-12 text-gray-900"
+              className="h-12 w-12 text-white"
               fill="currentColor"
               viewBox="0 0 84 84"
             >

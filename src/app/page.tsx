@@ -2,7 +2,6 @@ import { CTASection } from "@/components/CTASection";
 import Features from "@/components/FeaturesSection";
 import { FooterSection } from "@/components/FooterSection";
 import GlassSurfaceSection from "@/components/GlassSurfaceSection";
-import { HeroHeader } from "@/components/header";
 import { HeroSection } from "@/components/HeroSection";
 import { HyperspeedSection } from "@/components/HyperspeedSection";
 import { IntegrationsSection } from "@/components/IntegrationSection";
@@ -17,23 +16,22 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="w-full ">
-      <HeroHeader />
+    <main className="w-full bg-black-100">
       <HyperspeedSection />
-      <div className="flex flex-col pt-16 items-center justify-center min-h-screen bg-white">
+      <div className="flex flex-col pt-16 items-center justify-center min-h-screen bg-black-100">
         <HeroSection />
         <TechnologyLogos />
         <LogoSection />
         <MainFeatureSection />
 
         {/* Magic Bento Services Section */}
-        <section className="w-full py-20 bg-white">
+        <section className="w-full py-20 bg-black-100">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Interactive Services Showcase
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
                 Explore our comprehensive technology solutions with interactive cards
               </p>
             </div>
@@ -59,13 +57,13 @@ export default function Home() {
         {/* <GlassSurfaceSection /> */}
 
         {/* GridMotion Section */}
-        <section className="w-full bg-white py-20">
+        <section className="w-full bg-black-100 py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 Our Portfolio
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
                 Explore our work through an interactive grid of projects and achievements
               </p>
             </div>

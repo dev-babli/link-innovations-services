@@ -9,8 +9,6 @@ import { useRouter } from "next/navigation";
 import { ServicesDropdown } from "@/components/ServicesDropdown";
 
 const menuItems = [
-  { name: "Solutions", href: "/solutions" },
-  { name: "Portfolio", href: "/portfolio" },
   { name: "About Us", href: "/about" },
 ];
 
@@ -44,7 +42,7 @@ export const HeroHeader = () => {
               <Link
                 href="/"
                 aria-label="home"
-                className="flex items-center text-black font-medium gap-2 space-x-2"
+                className="flex items-center text-white font-medium gap-2 space-x-2"
               >
                 <Code />
                 Link Innovations
@@ -69,9 +67,9 @@ export const HeroHeader = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      className="text-black font-medium hover:text-accent-foreground block duration-150"
+                      className="text-white font-medium hover:text-accent-foreground block duration-150"
                     >
-                      <span className="text-black font-medium">
+                      <span className="text-white font-medium">
                         {item.name}
                       </span>
                     </Link>
@@ -80,7 +78,7 @@ export const HeroHeader = () => {
               </ul>
             </div>
 
-            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+            <div className="bg-background data-[state=active]:block lg:data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
               <div className="lg:hidden">
                 <ul className="space-y-6 text-base">
                   <li>
@@ -100,25 +98,10 @@ export const HeroHeader = () => {
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button
-                  variant="outline"
                   size="sm"
                   onClick={() => router.push("/contact")}
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <span>Contact</span>
-                </Button>
-                <Button
-                  size="sm"
-                  onClick={() => router.push("/quote")}
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <span>Quote</span>
-                </Button>
-                <Button
-                  size="sm"
-                  onClick={() => router.push("/get-started")}
                   className={cn(
-                    isScrolled ? "lg:inline-flex rounded-3xl px-5" : "hidden"
+                    isScrolled ? "lg:inline-flex rounded-3xl px-5" : "lg:inline-flex rounded-3xl px-5"
                   )}
                 >
                   <span>Get Started</span>

@@ -1,4 +1,6 @@
 import { FaLocationArrow } from "react-icons/fa6";
+import Image from "next/image";
+import Link from "next/link";
 
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
@@ -33,9 +35,27 @@ const Footer = () => {
         </a>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light text-gray-300">
-          Copyright © 2024 Adrian Hajdin
-        </p>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/"
+            aria-label="home"
+            className="flex items-center text-white font-medium gap-3 space-x-3"
+          >
+            <Image
+              src="/logos/Link_Innovations_transparent.png"
+              alt="Link Innovations"
+              width={40}
+              height={40}
+              className="w-10 h-10"
+            />
+            <span className="font-black text-lg tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-orbitron">
+              Link Innovations
+            </span>
+          </Link>
+          <p className="md:text-base text-sm md:font-normal font-light text-gray-300">
+            Copyright © 2024 Link Innovations
+          </p>
+        </div>
 
         <div className="flex items-center md:gap-3 gap-6">
           {socialMedia.map((info) => (

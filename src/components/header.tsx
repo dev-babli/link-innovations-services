@@ -19,10 +19,19 @@ export const HeroHeader = () => {
   const router = useRouter();
 
   React.useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
@@ -46,7 +55,7 @@ export const HeroHeader = () => {
                 className="flex items-center text-white font-medium gap-3 space-x-3"
               >
                 <Image
-                  src="/logos/Link Innovations_transparent-.png"
+                  src="/logos/Link_Innovations_transparent.png"
                   alt="Link Innovations"
                   width={48}
                   height={48}

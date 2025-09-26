@@ -9,10 +9,18 @@ interface LenisProviderProps {
 
 export const LenisProvider: React.FC<LenisProviderProps> = ({ children }) => {
     useEffect(() => {
-        // Initialize Lenis
+        // Initialize Lenis with optimized settings
         const lenis = new Lenis({
-            duration: 1.2,
+            duration: 0.8,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+            smooth: true,
+            smoothTouch: false,
+            touchMultiplier: 1.5,
+            wheelMultiplier: 0.8,
+            lerp: 0.1,
+            infinite: false,
+            syncTouch: true,
+            syncTouchLerp: 0.1,
         });
 
         // Animation frame function

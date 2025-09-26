@@ -9,6 +9,31 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+/* Removed scroll-behavior: smooth to prevent conflicts with Lenis */
+
+body {
+  overflow-x: hidden;
+}
+
+/* Performance optimizations for smooth scrolling */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize animations and transforms */
+[data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Hardware acceleration for smooth animations */
+.smooth-scroll {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

@@ -226,15 +226,15 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 
             if (useWindowScroll) {
                 const lenis = new Lenis({
-                    duration: 0.8,
+                    duration: 0.6,
                     easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
                     smoothWheel: true,
-                    touchMultiplier: 1.5,
+                    touchMultiplier: 1.2,
                     infinite: false,
-                    wheelMultiplier: 0.8,
-                    lerp: 0.15,
+                    wheelMultiplier: 0.7,
+                    lerp: 0.08,
                     syncTouch: true,
-                    syncTouchLerp: 0.1
+                    syncTouchLerp: 0.08
                 });
 
                 lenis.on('scroll', handleScroll);

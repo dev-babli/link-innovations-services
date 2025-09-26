@@ -175,7 +175,7 @@ const PricingCards: React.FC = () => {
 
                                 {/* Features */}
                                 <div className="space-y-4 mb-8">
-                                    <h4 className="font-semibold text-gray-900 mb-3">What's included:</h4>
+                                    <h4 className="font-semibold text-gray-900 mb-3">What&apos;s included:</h4>
                                     {plan.features.map((feature, featureIndex) => (
                                         <motion.div
                                             key={featureIndex}

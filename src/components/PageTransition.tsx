@@ -1,106 +1,75 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import { usePathname } from 'next/navigation';
 
 interface PageTransitionProps {
     children: React.ReactNode;
 }
 
-const pageVariants = {
-    initial: {
-        opacity: 0,
-        y: 20,
-        scale: 0.98
-    },
-    in: {
-        opacity: 1,
-        y: 0,
-        scale: 1
-    },
-    out: {
-        opacity: 0,
-        y: -20,
-        scale: 1.02
-    }
-};
-
-const pageTransition = {
-  type: 'tween' as const,
-  ease: 'anticipate' as const,
-  duration: 0.4
-};
-
-const loadingVariants = {
-  initial: {
-    scaleX: 0,
-    originX: 0
-  },
-  animate: {
-    scaleX: 1,
-    originX: 0,
-    transition: {
-      duration: 0.3,
-      ease: 'easeInOut' as const
-    }
-  },
-  exit: {
-    scaleX: 0,
-    originX: 1,
-    transition: {
-      duration: 0.3,
-      ease: 'easeInOut' as const
-    }
-  }
-};
-
 export default function PageTransition({ children }: PageTransitionProps) {
-    const pathname = usePathname();
-    const [isLoading, setIsLoading] = useState(false);
+    const currentPath = usePathname();
+    const stairParentRef = useRef<HTMLDivElement>(null);
+    const pageRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        setIsLoading(true);
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 100);
+    useGSAP(() => {
+        const tl = gsap.timeline();
 
-        return () => clearTimeout(timer);
-    }, [pathname]);
+        // Show stairs container
+        tl.to(stairParentRef.current, {
+            display: 'block',
+        });
+
+        // Animate stairs from height 0
+        tl.from('.stair', {
+            height: 0,
+            stagger: {
+                amount: -0.2
+            }
+        });
+
+        // Move stairs down
+        tl.to('.stair', {
+            y: '100%',
+            stagger: {
+                amount: -0.25
+            }
+        });
+
+        // Hide stairs container
+        tl.to(stairParentRef.current, {
+            display: 'none'
+        });
+
+        // Reset stairs position
+        tl.to('.stair', {
+            y: '0%',
+        });
+
+        // Animate page content
+        gsap.from(pageRef.current, {
+            opacity: 0,
+            delay: 1.3,
+            scale: 1.2
+        });
+    }, [currentPath]);
 
     return (
-        <AnimatePresence mode="wait">
-            <motion.div
-                key={pathname}
-                initial="initial"
-                animate="in"
-                exit="out"
-                variants={pageVariants}
-                transition={pageTransition}
-                className="relative"
-            >
-                {/* Loading bar */}
-                <AnimatePresence>
-                    {isLoading && (
-                        <motion.div
-                            variants={loadingVariants}
-                            initial="initial"
-                            animate="animate"
-                            exit="exit"
-                            className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 z-50"
-                        />
-                    )}
-                </AnimatePresence>
-
-                {/* Page content */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.1, duration: 0.3 }}
-                >
-                    {children}
-                </motion.div>
-            </motion.div>
-        </AnimatePresence>
+        <div>
+            <div ref={stairParentRef} className='h-screen w-full fixed z-20 top-0' style={{ display: 'none' }}>
+                <div className='h-full w-full flex'>
+                    <div className='stair h-full w-1/5 bg-black'></div>
+                    <div className='stair h-full w-1/5 bg-black'></div>
+                    <div className='stair h-full w-1/5 bg-black'></div>
+                    <div className='stair h-full w-1/5 bg-black'></div>
+                    <div className='stair h-full w-1/5 bg-black'></div>
+                </div>
+            </div>
+            <div ref={pageRef}>
+                {children}
+            </div>
+        </div>
     );
 }

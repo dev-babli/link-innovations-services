@@ -33,7 +33,7 @@ const NeuralNetwork: React.FC<NeuralNetworkProps> = ({
     colors = ['#3B82F6', '#8B5CF6', '#EC4899', '#10B981'],
 }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const animationRef = useRef<number>();
+    const animationRef = useRef<number | null>(null);
     const nodesRef = useRef<Node[]>([]);
     const [isActive, setIsActive] = useState(true);
 

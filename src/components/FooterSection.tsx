@@ -1,8 +1,18 @@
-import { Code, Linkedin, Twitter, Send } from "lucide-react";
+'use client';
+
+import Image from "next/image";
+import { Linkedin, Twitter, Send } from "lucide-react";
 import React from "react";
 import Link from "next/link";
+import { useFastNavigation } from "@/hooks/useFastNavigation";
 
 const FooterSection = () => {
+  const { navigateTo, prefetchRoute } = useFastNavigation();
+
+  const handleLinkClick = (path: string) => {
+    navigateTo(path);
+  };
+
   return (
     <footer className="w-full bg-black text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -16,19 +26,31 @@ const FooterSection = () => {
             <div className="h-px bg-gray-600 w-16 mb-6"></div>
             <ul className="space-y-3">
               <li>
-                <Link href="/web-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <button 
+                  onClick={() => handleLinkClick('/services/web-development')}
+                  onMouseEnter={() => prefetchRoute('/services/web-development')}
+                  className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                >
                   Custom Web Applications
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/web-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <button 
+                  onClick={() => handleLinkClick('/services/web-development')}
+                  onMouseEnter={() => prefetchRoute('/services/web-development')}
+                  className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                >
                   E-commerce Solutions
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/web-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <button 
+                  onClick={() => handleLinkClick('/services/web-development')}
+                  onMouseEnter={() => prefetchRoute('/services/web-development')}
+                  className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                >
                   Progressive Web Apps
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -41,14 +63,22 @@ const FooterSection = () => {
             <div className="h-px bg-gray-600 w-16 mb-6"></div>
             <ul className="space-y-3">
               <li>
-                <Link href="/cloud-solutions" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <button 
+                  onClick={() => handleLinkClick('/services/cloud-solutions')}
+                  onMouseEnter={() => prefetchRoute('/services/cloud-solutions')}
+                  className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                >
                   Cloud Migration
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/cloud-solutions" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <button 
+                  onClick={() => handleLinkClick('/services/cloud-solutions')}
+                  onMouseEnter={() => prefetchRoute('/services/cloud-solutions')}
+                  className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                >
                   DevOps & Automation
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -61,19 +91,31 @@ const FooterSection = () => {
             <div className="h-px bg-gray-600 w-16 mb-6"></div>
             <ul className="space-y-3">
               <li>
-                <Link href="/mobile-app-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <button 
+                  onClick={() => handleLinkClick('/services/app-development')}
+                  onMouseEnter={() => prefetchRoute('/services/app-development')}
+                  className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                >
                   iOS Development
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/mobile-app-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <button 
+                  onClick={() => handleLinkClick('/services/app-development')}
+                  onMouseEnter={() => prefetchRoute('/services/app-development')}
+                  className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                >
                   Android Development
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/mobile-app-development" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <button 
+                  onClick={() => handleLinkClick('/services/app-development')}
+                  onMouseEnter={() => prefetchRoute('/services/app-development')}
+                  className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                >
                   Cross-Platform Apps
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -86,24 +128,22 @@ const FooterSection = () => {
             <div className="h-px bg-gray-600 w-16 mb-6"></div>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <button 
+                  onClick={() => handleLinkClick('/about')}
+                  onMouseEnter={() => prefetchRoute('/about')}
+                  className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                >
                   About
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/portfolio" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Portfolio
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <button 
+                  onClick={() => handleLinkClick('/contact')}
+                  onMouseEnter={() => prefetchRoute('/contact')}
+                  className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                >
                   Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/quote" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Get Quote
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -113,11 +153,22 @@ const FooterSection = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between pt-8 border-t border-gray-800">
           {/* Large Logo */}
           <div className="mb-8 lg:mb-0">
-            <div className="flex items-center space-x-3">
-              <Code className="w-8 h-8 text-white" />
-              <span className="text-6xl font-bold text-gray-300 tracking-wider">
-                LINK
-              </span>
+            <div className="flex items-center space-x-4">
+              <Image
+                src="/logos/Link Innovations_transparent-.png"
+                alt="Link Innovations"
+                width={80}
+                height={80}
+                className="w-20 h-20"
+              />
+              <div className="flex flex-col">
+                <span className="text-6xl font-black text-white tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-orbitron">
+                  LINK
+                </span>
+                <span className="text-2xl font-bold text-gray-400 tracking-widest font-exo2">
+                  INNOVATIONS
+                </span>
+              </div>
             </div>
           </div>
 
@@ -139,13 +190,14 @@ const FooterSection = () => {
               >
                 <Twitter className="w-6 h-6" />
               </Link>
-              <Link
-                href="/contact"
+              <button
+                onClick={() => handleLinkClick('/contact')}
+                onMouseEnter={() => prefetchRoute('/contact')}
                 className="text-white hover:text-gray-300 transition-colors"
                 aria-label="Contact"
               >
                 <Send className="w-6 h-6" />
-              </Link>
+              </button>
             </div>
 
             {/* Copyright */}

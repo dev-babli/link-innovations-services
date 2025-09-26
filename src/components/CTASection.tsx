@@ -50,7 +50,7 @@ const CTASection: React.FC = () => {
             </h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               Join hundreds of successful businesses that have chosen Link Innovations
-              as their technology partner. Let's build something amazing together.
+              as their technology partner. Let&apos;s build something amazing together.
             </p>
 
             {/* Benefits */}
@@ -84,7 +84,7 @@ const CTASection: React.FC = () => {
                       <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-white text-sm mb-1">"{testimonial.text}"</p>
+                  <p className="text-white text-sm mb-1">&ldquo;{testimonial.text}&rdquo;</p>
                   <p className="text-blue-200 text-xs">- {testimonial.author}</p>
                 </motion.div>
               ))}

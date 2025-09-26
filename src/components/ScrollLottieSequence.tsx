@@ -99,7 +99,7 @@ const ScrollLottieSequence: React.FC<ScrollLottieSequenceProps> = ({
                             renderer="svg"
                             className="w-full h-full"
                             onLoad={handleLottieLoad}
-                            lottieRef={lottieRef}
+                            externalLottieRef={lottieRef}
                         />
 
                         {/* Loading state */}

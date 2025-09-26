@@ -7,7 +7,7 @@ interface HolographicTextProps {
     text: string;
     className?: string;
     size?: 'sm' | 'md' | 'lg' | 'xl';
-    animation?: 'glitch' | 'rainbow' | 'neon' | 'matrix';
+    animation?: 'glitch' | 'rainbow' | 'neon' | 'matrix' | 'holographic';
     speed?: number;
 }
 

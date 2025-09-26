@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Orbitron, Exo_2 } from "next/font/google";
 import "./globals.css";
 import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
@@ -7,6 +7,8 @@ import Script from "next/script";
 import { HeroHeader } from "@/components/header";
 import PageTransition from "@/components/PageTransition";
 import LenisProvider from "@/components/LenisProvider";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,6 +18,18 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+});
+
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+});
+
+const exo2 = Exo_2({
+  variable: "--font-exo2",
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-black-100`}
+        className={`${inter.variable} ${jetbrainsMono.variable} ${orbitron.variable} ${exo2.variable} antialiased bg-black-100`}
       >
         <ErrorReporter />
         <Script
@@ -46,8 +60,12 @@ export default function RootLayout({
         />
         <LenisProvider>
           <HeroHeader />
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
           <VisualEditsMessenger />
+          <Analytics />
+          <SpeedInsights />
         </LenisProvider>
       </body>
     </html>

@@ -117,7 +117,7 @@ const ProjectGallery: React.FC = () => {
                         Our Portfolio
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Explore our recent projects and see how we've helped businesses achieve their digital goals
+                        Explore our recent projects and see how we&apos;ve helped businesses achieve their digital goals
                     </p>
                 </div>
 
@@ -128,8 +128,8 @@ const ProjectGallery: React.FC = () => {
                             key={category}
                             onClick={() => setSelectedCategory(category)}
                             className={`px-6 py-3 rounded-full font-medium transition-all flex items-center space-x-2 ${selectedCategory === category
-                                    ? 'bg-blue-500 text-white shadow-lg'
-                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                ? 'bg-blue-500 text-white shadow-lg'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                                 }`}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}

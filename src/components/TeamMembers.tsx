@@ -288,7 +288,7 @@ const TeamMembers: React.FC = () => {
                             Want to Join Our Team?
                         </h3>
                         <p className="text-gray-600 mb-6">
-                            We're always looking for talented individuals who share our passion for innovation and excellence.
+                            We&apos;re always looking for talented individuals who share our passion for innovation and excellence.
                         </p>
                         <motion.button
                             className="px-8 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center space-x-2 mx-auto"

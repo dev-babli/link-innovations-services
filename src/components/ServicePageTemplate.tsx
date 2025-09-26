@@ -217,7 +217,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-4">WordPress Development</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Your website's needs may vary in complexity and functionality, but we're here to help.
+                Your website&apos;s needs may vary in complexity and functionality, but we&apos;re here to help.
               </p>
 
               {/* Code Editor Mockup */}
@@ -231,9 +231,9 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
                   </div>
                 </div>
                 <div className="space-y-2 text-sm">
-                  <div className="text-blue-400">import {ServiceMagicBento} from '@/components/ServiceMagicBento';</div>
+                  <div className="text-blue-400">import {'{'}ServiceMagicBento{'}'} from '@/components/ServiceMagicBento';</div>
                   <div className="text-orange-400">className="text-sm font-semibold text-[#605e5c] tracking-widest uppercase mb-4"</div>
-                  <div className="text-gray-300">// Your website's needs may vary in complexity</div>
+                  <div className="text-gray-300">// Your website&apos;s needs may vary in complexity</div>
                   <div className="bg-orange-500/20 px-2 py-1 rounded text-white inline-block">Join Now</div>
                 </div>
               </div>

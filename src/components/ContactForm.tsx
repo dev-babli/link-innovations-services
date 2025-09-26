@@ -122,7 +122,7 @@ const ContactForm: React.FC = () => {
                 </h2>
 
                 <p className="text-xl text-gray-600 mb-6">
-                    Your message has been sent successfully. We'll get back to you within 24 hours.
+                    Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
                 </p>
 
                 <motion.button
@@ -158,7 +158,7 @@ const ContactForm: React.FC = () => {
                             Get In Touch
                         </h2>
                         <p className="text-xl text-gray-600 mb-8">
-                            Ready to start your next project? Let's discuss how we can help you achieve your goals.
+                            Ready to start your next project? Let&apos;s discuss how we can help you achieve your goals.
                         </p>
 
                         <div className="space-y-6">
@@ -223,8 +223,8 @@ const ContactForm: React.FC = () => {
                                     <div key={index} className="flex items-center">
                                         <div
                                             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${index <= currentStep
-                                                    ? 'bg-blue-500 text-white'
-                                                    : 'bg-gray-300 text-gray-600'
+                                                ? 'bg-blue-500 text-white'
+                                                : 'bg-gray-300 text-gray-600'
                                                 }`}
                                         >
                                             {index + 1}

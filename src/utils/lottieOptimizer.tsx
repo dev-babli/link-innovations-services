@@ -44,9 +44,9 @@ export const getOptimizedLottieConfig = (
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const isLowEndDevice = typeof navigator !== 'undefined' && 
     (navigator.hardwareConcurrency || 4) < 4;
-  const isSlowConnection = typeof navigator !== 'undefined' && 
-    navigator.connection && 
-    (navigator.connection as any).effectiveType === 'slow-2g';
+  const isSlowConnection = typeof navigator !== 'undefined' &&
+    (navigator as any).connection &&
+    (navigator as any).connection.effectiveType === 'slow-2g';
 
   // Determine optimal settings
   let renderer: 'svg' | 'canvas' | 'html' = 'svg';
@@ -214,8 +214,8 @@ export const shouldDisableLottieAnimations = (): boolean => {
   }
 
   // Check for slow connection
-  if (navigator.connection) {
-    const connection = navigator.connection as any;
+  if ((navigator as any).connection) {
+    const connection = (navigator as any).connection;
     if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
       return true;
     }

@@ -173,7 +173,7 @@ export default function AboutPage() {
                     reaches its full potential with cutting-edge technology, empowering businesses to focus on what matters most.</strong>
                 </p>
                 <p className="text-lg text-gray-300">
-                  In today's fast-paced digital landscape, robust and scalable software solutions are essential.
+                  In today&apos;s fast-paced digital landscape, robust and scalable software solutions are essential.
                   Our goal is to streamline how businesses manage their digital infrastructure, both internally and externally,
                   with modern technology stacks. We equip development teams with robust tools to enhance
                   productivity and deliver exceptional user experiences.

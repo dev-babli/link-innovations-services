@@ -1,4 +1,4 @@
-import { CTASection } from "@/components/CTASection";
+import CTASection from "@/components/CTASection";
 import Features from "@/components/FeaturesSection";
 import { FooterSection } from "@/components/FooterSection";
 import GlassSurfaceSection from "@/components/GlassSurfaceSection";

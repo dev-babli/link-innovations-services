@@ -334,7 +334,7 @@ const FeatureGrid: React.FC = () => {
                             Ready to Experience These Features?
                         </h3>
                         <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                            Let's discuss how our comprehensive feature set can help your business achieve its goals.
+                            Let&apos;s discuss how our comprehensive feature set can help your business achieve its goals.
                         </p>
                         <motion.button
                             className="px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-50 transition-colors"

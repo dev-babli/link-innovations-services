@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import BlurText from "@/components/BlurText";
+import BlurText from "../BlurText";
 
 const services = [
     {
@@ -181,9 +181,8 @@ export default function ServiceCards() {
                                         <BlurText
                                             text={service.title}
                                             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white"
-                                            blurAmount={20}
                                             delay={service.delay + 0.5}
-                                            duration={1000}
+                                            stepDuration={1.0}
                                         />
                                         {service.description && (
                                             <motion.p

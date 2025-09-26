@@ -13,7 +13,7 @@ export default function QuotePage() {
         <div className="space-y-2">
           <h1 className="text-4xl font-bold tracking-tight">Get a Quote</h1>
           <p className="text-lg text-muted-foreground">
-            Provide us with the details below and we'll get back to you with a fast estimate
+            Provide us with the details below and we&apos;ll get back to you with a fast estimate
           </p>
         </div>
 
@@ -24,7 +24,7 @@ export default function QuotePage() {
               <span className="font-medium text-foreground">Goals:</span> What are you hoping to achieve with this project?
             </li>
             <li>
-              <span className="font-medium text-foreground">Budget Range:</span> What's your approximate budget for this project?
+              <span className="font-medium text-foreground">Budget Range:</span> What&apos;s your approximate budget for this project?
             </li>
             <li>
               <span className="font-medium text-foreground">Timeline:</span> When do you need this completed?

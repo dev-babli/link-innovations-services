@@ -110,7 +110,6 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.1 }}
                                 style={{
-                                    imageRendering: 'high-quality',
                                     imageRendering: '-webkit-optimize-contrast',
                                 }}
                             />
@@ -148,7 +147,6 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
                                 alt={`Frame ${index + 1}`}
                                 className="w-full h-full object-cover"
                                 style={{
-                                    imageRendering: 'high-quality',
                                     imageRendering: '-webkit-optimize-contrast',
                                 }}
                             />

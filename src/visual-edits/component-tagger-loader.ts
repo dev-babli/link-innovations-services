@@ -2,10 +2,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = componentTagger;
-const parser_1 = require("@babel/parser");
-const magic_string_1 = require("magic-string");
-const estree_walker_1 = require("estree-walker");
-const path = require("path");
+import * as parser_1 from "@babel/parser";
+import * as magic_string_1 from "magic-string";
+// @ts-ignore
+import * as estree_walker_1 from "estree-walker";
+import * as path from "path";
 /* ───────────────────────────────────────────── Blacklists */
 const threeFiberElems = [
     "object3D",
@@ -269,10 +270,10 @@ const dreiElems = [
     "Stars",
     "OrbitControls"
 ];
-const shouldTag = (name) => !threeFiberElems.includes(name) && !dreiElems.includes(name);
+const shouldTag = (name: string) => !threeFiberElems.includes(name) && !dreiElems.includes(name);
 // ➕ Collect aliases of the Next.js <Image> component so we can reliably tag it even if it was renamed.
-const isNextImageAlias = (aliases, name) => aliases.has(name);
-const extractLiteralValue = (node) => {
+const isNextImageAlias = (aliases: any, name: string) => aliases.has(name);
+const extractLiteralValue = (node: any) => {
     if (!node)
         return undefined;
     switch (node.type) {
@@ -283,7 +284,7 @@ const extractLiteralValue = (node) => {
         case 'BooleanLiteral':
             return node.value;
         case 'ObjectExpression':
-            const obj = {};
+            const obj: any = {};
             for (const prop of node.properties) {
                 if (prop.type === 'ObjectProperty' && !prop.computed) {
                     const key = prop.key.type === 'Identifier' ? prop.key.name : prop.key.value;
@@ -292,16 +293,16 @@ const extractLiteralValue = (node) => {
             }
             return obj;
         case 'ArrayExpression':
-            return node.elements.map((el) => extractLiteralValue(el));
+            return node.elements.map((el: any) => extractLiteralValue(el));
         default:
             return undefined;
     }
 };
-const findVariableDeclarations = (ast) => {
+const findVariableDeclarations = (ast: any) => {
     const variables = new Map();
     (0, estree_walker_1.walk)(ast, {
-        enter(node) {
-            var _a;
+        enter(node: any) {
+            let _a;
             // Handle const/let/var declarations
             if (node.type === 'VariableDeclaration') {
                 for (const declarator of node.declarations) {
@@ -322,8 +323,8 @@ const findVariableDeclarations = (ast) => {
     });
     return variables;
 };
-const findMapContext = (node, variables) => {
-    var _a, _b, _c, _d, _e, _f, _g;
+const findMapContext = (node: any, variables: any) => {
+    let _a, _b, _c, _d, _e, _f, _g;
     // Walk up the tree to find if this JSX element is inside a map call
     let current = node;
     let depth = 0;
@@ -355,7 +356,7 @@ const findMapContext = (node, variables) => {
     }
     return null;
 };
-const getSemanticName = (node, mapContext, imageAliases) => {
+const getSemanticName = (node: any, mapContext: any, imageAliases: any) => {
     const getName = () => {
         if (node.name.type === 'JSXIdentifier')
             return node.name.name;
@@ -373,7 +374,7 @@ const getSemanticName = (node, mapContext, imageAliases) => {
     return isNextImageAlias(imageAliases, tagName) ? 'img' : tagName;
 };
 /* ───────────────────────────────────────────── Loader */
-function componentTagger(src, map) {
+function componentTagger(this: any, src: any, map: any) {
     const done = this.async();
     try {
         if (/node_modules/.test(this.resourcePath))
@@ -387,7 +388,7 @@ function componentTagger(src, map) {
         let mutated = false;
         // Add parent references to AST nodes for upward traversal (non-enumerable to avoid infinite recursion)
         (0, estree_walker_1.walk)(ast, {
-            enter(node, parent) {
+            enter(node: any, parent: any) {
                 if (parent && !Object.prototype.hasOwnProperty.call(node, 'parent')) {
                     Object.defineProperty(node, 'parent', { value: parent, enumerable: false });
                 }
@@ -398,7 +399,7 @@ function componentTagger(src, map) {
         // 1️⃣ Gather local identifiers that reference `next/image`.
         const imageAliases = new Set();
         (0, estree_walker_1.walk)(ast, {
-            enter(node) {
+            enter(node: any) {
                 if (node.type === 'ImportDeclaration' &&
                     node.source.value === 'next/image') {
                     for (const spec of node.specifiers) {
@@ -409,8 +410,8 @@ function componentTagger(src, map) {
         });
         // 2️⃣ Inject attributes with enhanced semantic context.
         (0, estree_walker_1.walk)(ast, {
-            enter(node) {
-                var _a;
+            enter(node: any) {
+                let _a;
                 if (node.type !== 'JSXOpeningElement')
                     return;
                 const mapContext = findMapContext(node, variables);
@@ -427,8 +428,8 @@ function componentTagger(src, map) {
                     orchidsId += `@${mapContext.arrayName}`;
                 }
                 // 🔍 Append referenced variable locations for simple identifier references in props
-                (_a = node.attributes) === null || _a === void 0 ? void 0 : _a.forEach((attr) => {
-                    var _a, _b;
+                (_a = node.attributes) === null || _a === void 0 ? void 0 : _a.forEach((attr: any) => {
+                    let _a, _b;
                     if (attr.type === 'JSXAttribute' &&
                         ((_a = attr.value) === null || _a === void 0 ? void 0 : _a.type) === 'JSXExpressionContainer' &&
                         ((_b = attr.value.expression) === null || _b === void 0 ? void 0 : _b.type) === 'Identifier') {
@@ -440,7 +441,7 @@ function componentTagger(src, map) {
                     }
                 });
                 // 📍 If inside a map context and we have an index variable, inject data-map-index
-                if (mapContext === null || mapContext === void 0 ? void 0 : mapContext.indexVarName) {
+                if (mapContext && mapContext.indexVarName) {
                     ms.appendLeft(node.name.end, ` data-map-index={${mapContext.indexVarName}}`);
                 }
                 ms.appendLeft(node.name.end, ` data-orchids-id="${orchidsId}" data-orchids-name="${semanticName}"`);

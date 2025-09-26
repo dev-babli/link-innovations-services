@@ -65,3 +65,5 @@ export default function TrustedCarousel() {
         </motion.section>
     );
 }
+
+

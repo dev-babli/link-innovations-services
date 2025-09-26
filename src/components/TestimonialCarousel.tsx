@@ -90,7 +90,7 @@ const TestimonialCarousel: React.FC = () => {
                         What Our Clients Say
                     </h2>
                     <p className="text-xl text-gray-600">
-                        Don't just take our word for it - hear from our satisfied clients
+                        Don&apos;t just take our word for it - hear from our satisfied clients
                     </p>
                 </div>
 
@@ -122,7 +122,7 @@ const TestimonialCarousel: React.FC = () => {
                                     transition={{ delay: 0.3 }}
                                     className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
                                 >
-                                    "{testimonials[currentIndex].content}"
+                                    &ldquo;{testimonials[currentIndex].content}&rdquo;
                                 </motion.blockquote>
 
                                 {/* Rating */}
@@ -181,8 +181,8 @@ const TestimonialCarousel: React.FC = () => {
                             key={index}
                             onClick={() => setCurrentIndex(index)}
                             className={`w-3 h-3 rounded-full transition-all ${index === currentIndex
-                                    ? 'bg-blue-500 scale-125'
-                                    : 'bg-gray-300 hover:bg-gray-400'
+                                ? 'bg-blue-500 scale-125'
+                                : 'bg-gray-300 hover:bg-gray-400'
                                 }`}
                         />
                     ))}

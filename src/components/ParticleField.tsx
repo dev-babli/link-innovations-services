@@ -28,7 +28,7 @@ const ParticleField: React.FC<ParticleFieldProps> = ({
     colors = ['#3B82F6', '#8B5CF6', '#EC4899', '#10B981', '#F59E0B'],
 }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const animationRef = useRef<number>();
+    const animationRef = useRef<number | null>(null);
     const particlesRef = useRef<Particle[]>([]);
     const mouseRef = useRef({ x: 0, y: 0 });
 

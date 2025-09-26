@@ -18,10 +18,12 @@ interface LottieAnimationProps {
     onComplete?: () => void;
     onLoopComplete?: () => void;
     onEnterFrame?: (frame: number) => void;
+    onLoad?: () => void;
+    externalLottieRef?: React.RefObject<any>;
     width?: number | string;
     height?: number | string;
     quality?: 'low' | 'medium' | 'high';
-    renderer?: 'svg' | 'canvas' | 'html';
+    renderer?: 'svg';
     // Framer Motion integration
     withFramerMotion?: boolean;
     motionProps?: {
@@ -54,6 +56,8 @@ const LottieAnimation: React.FC<LottieAnimationProps> = ({
     onComplete,
     onLoopComplete,
     onEnterFrame,
+    onLoad,
+    externalLottieRef,
     width = '100%',
     height = 'auto',
     quality = 'high',
@@ -65,7 +69,8 @@ const LottieAnimation: React.FC<LottieAnimationProps> = ({
     lazy = false,
     threshold = 0.1,
 }) => {
-    const lottieRef = useRef<LottieRefCurrentProps>(null);
+    const internalLottieRef = useRef<LottieRefCurrentProps>(null);
+    const lottieRef = externalLottieRef || internalLottieRef;
     const [isLoaded, setIsLoaded] = useState(false);
     const [isInView, setIsInView] = useState(!lazy);
     const [isPlaying, setIsPlaying] = useState(autoplay);
@@ -195,6 +200,7 @@ const LottieAnimation: React.FC<LottieAnimationProps> = ({
             onComplete={handleComplete}
             onLoopComplete={handleLoopComplete}
             onEnterFrame={handleEnterFrame}
+            onLoad={onLoad}
             renderer={renderer}
             rendererSettings={{
                 preserveAspectRatio: 'xMidYMid slice',

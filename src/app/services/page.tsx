@@ -266,7 +266,7 @@ export default function ServicesPage() {
           <BackgroundGradientAnimation>
             <div className="text-center text-white p-8">
               <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-              <p className="text-xl mb-8">Let's build something amazing together</p>
+              <p className="text-xl mb-8">Let&apos;s build something amazing together</p>
               <HoverBorderGradient
                 containerClassName="rounded-full"
                 as="button"

@@ -44,7 +44,7 @@ const GestureControl: React.FC<GestureControlProps> = ({
         if (!enableCamera) return;
 
         const checkSupport = async () => {
-            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            if (navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
                 setIsSupported(true);
             }
         };

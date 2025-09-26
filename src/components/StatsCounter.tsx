@@ -187,7 +187,7 @@ const StatsCounter: React.FC = () => {
                             Trusted by Industry Leaders
                         </h3>
                         <p className="text-blue-100 mb-6">
-                            Our track record speaks for itself. We've consistently delivered exceptional results
+                            Our track record speaks for itself. We&apos;ve consistently delivered exceptional results
                             that exceed expectations and drive real business value.
                         </p>
                         <div className="flex flex-wrap justify-center gap-8 text-blue-100">

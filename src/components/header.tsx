@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { Logo } from "@/components/logo";
-import { Code, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
@@ -42,10 +43,18 @@ export const HeroHeader = () => {
               <Link
                 href="/"
                 aria-label="home"
-                className="flex items-center text-white font-medium gap-2 space-x-2"
+                className="flex items-center text-white font-medium gap-3 space-x-3"
               >
-                <Code />
-                Link Innovations
+                <Image
+                  src="/logos/Link Innovations_transparent-.png"
+                  alt="Link Innovations"
+                  width={48}
+                  height={48}
+                  className="w-12 h-12"
+                />
+                <span className="text-white font-black text-xl tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-orbitron">
+                  Link Innovations
+                </span>
               </Link>
 
               <button

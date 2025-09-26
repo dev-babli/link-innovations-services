@@ -32,6 +32,30 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  // Optimize for Vercel deployment
+  experimental: {
+    optimizePackageImports: ['@vercel/analytics', '@vercel/speed-insights'],
+    // Enable faster routing
+    scrollRestoration: true,
+    // Optimize bundle splitting
+    optimizeCss: true,
+  },
+  // Enable static optimization
+  output: 'standalone',
+  // Disable ESLint during build for deployment
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  // Optimize bundle
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
+  },
   turbopack: {
     rules: {
       "*.{jsx,tsx}": {

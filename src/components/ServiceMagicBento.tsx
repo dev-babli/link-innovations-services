@@ -298,7 +298,7 @@ const getServiceData = (serviceType: string, features: any[] = []) => {
         ]
     };
 
-    return baseData[serviceType] || baseData['web-development'];
+    return baseData[serviceType as keyof typeof baseData] || baseData['web-development'];
 };
 
 const createParticleElement = (x: number, y: number, color: string = DEFAULT_GLOW_COLOR): HTMLDivElement => {

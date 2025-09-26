@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Orbitron, Exo_2 } from "next/font/google";
 import "./globals.css";
-import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 import { HeroHeader } from "@/components/header";
@@ -77,7 +76,6 @@ export default function RootLayout({
           <PageTransition>
             {children}
           </PageTransition>
-          <VisualEditsMessenger />
           <Analytics />
           <SpeedInsights />
         </LenisProvider>

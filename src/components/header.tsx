@@ -61,7 +61,7 @@ export const HeroHeader = () => {
                   height={48}
                   className="w-12 h-12"
                 />
-                <span className="text-white font-black text-xl tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-orbitron">
+                <span className="font-black text-xl tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-orbitron">
                   Link Innovations
                 </span>
               </Link>
